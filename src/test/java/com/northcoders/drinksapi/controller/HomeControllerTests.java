@@ -11,15 +11,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 @SpringBootTest
 public class HomeControllerTests {
-
     @Autowired
     private MockMvc mockMvcController;
-
     @Test
     public void testGetHome() throws Exception {
 
         String expectedContent = "Welcome to the Drinks API!";
-
         this.mockMvcController.perform(
                         MockMvcRequestBuilders.get("/"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
